@@ -1,0 +1,136 @@
+🔹 1.Para un valor entero positivo Seg que representa una cantidad en segundos, indicar su equivalente en minutos, horas y
+dias
+
+integer seg ,min,h,d
+escribir("Cantidad de segundos")
+    leer(seg)
+        min=seg/60
+        h=min/3600
+        d=h/86400
+escribir ("La cantidad de segundos que ingreso en minutos son +min + en horas son +h + y en dias son + d")
+
+🔹 2.Solicitar un valor entero que representa un año e indicar si se trata de un año bisiesto
+
+integer año;
+    leer(año)
+        si año mod 4 == 0 entonces
+            escribir(año + " no es un año bisiesto");
+        sino
+            escribir(año + " es un año bisiesto");
+        fsi;
+
+🔹 3.Dada una letra cualquiera indicar si es consonante, vocal o un digito
+
+string valor; 
+    leer (valor)
+        si valor == integer entonces
+            escribir(valor +" es un digito");
+        sino si valor == a,e,i,o,u
+            escribir(valor + " es una vocal");
+        sino
+            escribir(valor + "  es una consonante");
+        fsi;
+
+🔹 4.Determinar si un digito es par o impar
+
+integer num;
+    leer (num)
+        si num mod 2 == 0 entonces 
+            escribir (num + " es un numero par");
+        sino
+            escribir( num + " es un numero impar");
+        fsi;
+
+🔹 5.Determinar el maximo de 2 valores
+
+integer num1, num2, a, b, res
+    Escribir ("Ingrese el primer numero:");
+        Leer num1
+    Escribir ("Ingrese el segundo numero: ");
+        Leer num2
+
+    a = max(num1, num2)
+    b = min(num1, num2)
+
+    Mientras b != 0:
+        res = b
+        b = a % b
+        a = res
+
+    Escribir ("El Maximo entre", num1, "y", num2, "es:", a);
+Fin;
+
+🔹 6.Calcular el valor absoluto de un numero N
+
+integer num;
+ leer(num)
+  si num < 0 entonces
+   num = num * -1
+        escribir("el valor absoluto de tu numero es" + num);
+  fsi;
+
+🔹 7. Determinar el signo de la suma de dos numeros, sin calcularla
+integer num1,num2
+    leer (num1,num2)
+        si numero1 > 0  numero2 > 0 o numero1 < 0 y numero2 < 0 entonces
+            escribir("El signo de la suma es positivo")
+        sino si numero1 = 0 y numero2 = 0 entonces
+           escribir("mostrar "El signo de la suma es cero")
+        sino
+            escribir("El signo de la suma es negativo")
+        fsi;
+
+🔹 8. Solicitar un numero entero de 4 digitos significativo y descomponerlo para mostrar unidades de mil, centenas, decenas y
+unidades
+
+Algoritmo DescomponerNumero
+    Definir numero, unidades, decenas, centenas, unidades_de_mil Como Entero
+
+    Escribir "Ingrese un numero entero de 4 digitos:"
+    Leer numero
+
+    Si (numero < 1000) o (numero > 9999) Entonces
+        Escribir "Error, el numero debe ser de 4 cifras"
+    Sino
+        unidades_de_mil <- numero / 1000
+        centenas <- (numero % 1000) / 100
+        decenas <- (numero % 100) / 10
+        unidades <- numero % 10
+
+        Escribir "Unidades de mil: ", unidades_de_mil
+        Escribir "Centenas: ", centenas
+        Escribir "Decenas: ", decenas
+        Escribir "Unidades: ", unidades
+    FinSi
+FinAlgoritmo
+
+🔹 9. Indicar si un alumno aprobo o no una materia conformada por 2 parciales (que representan el 50% de la definitiva), 2
+quices (30% de la definitiva) y 2 proyectos (el primero 10% y el segundo 20%). En el caso de que su definitiva sea
+mayor o igual a 9 pero menor a 9,5, indicarle que debe asistir a actividades de recuperacion. Si la nota es menor a 9 el
+alumno esta reprobado
+
+Definir parcial1, parcial2, quiz1, quiz2, proyecto1, proyecto2, definitiva Como Real
+
+    Escribir "Ingrese la nota del primer parcial (0-100):"
+    Leer parcial1
+    Escribir "Ingrese la nota del segundo parcial (0-100):"
+    Leer parcial2
+    Escribir "Ingrese la nota del primer quiz (0-100):"
+    Leer quiz1
+    Escribir "Ingrese la nota del segundo quiz (0-100):"
+    Leer quiz2
+    Escribir "Ingrese la nota del primer proyecto (0-100):"
+    Leer proyecto1
+    Escribir "Ingrese la nota del segundo proyecto (0-100):"
+    Leer proyecto2
+
+    definitiva <- (parcial1 + parcial2) * 0.5 + (quiz1 + quiz2) * 0.3 + proyecto1 * 0.1 + proyecto2 * 0.2
+
+    Escribir "La nota definitiva es: ", definitiva
+
+    Si (definitiva >= 9) y (definitiva < 9.5) Entonces
+        Escribir "Debe asistir a actividades de recuperacion."
+    Sino Si (definitiva < 9) Entonces
+        Escribir "El alumno esta reprobado."
+    FinSi
+FinAlgoritmo
